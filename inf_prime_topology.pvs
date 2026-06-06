@@ -1,0 +1,117 @@
+ %------------------------------------------------------------------------------
+%  Proof of the infinity of prime numbers using a topological argument 
+%  due to H. FÜRSTENBERG.
+%
+%  Formalization based on the reference "Proofs from the Book", 
+%  Martin Aigner Günter and M. Ziegler
+%
+%  Authors: Marcos Rony Silva Brandão, Universidade Federal de Goiás
+%           Thaynara Arielly de Lima, Universidade Federal de Goiás
+%           Mauricio Ayala-Rincón, Universidade de Brasília
+%
+%
+%
+%    2023/05/28
+%------------------------------------------------------------------------------
+
+
+inf_prime_topology: THEORY
+
+BEGIN
+IMPORTING topology@topology_prelim[int]
+
+a,x,y: VAR int
+b,c: VAR posint
+O: VAR set[int]
+A: VAR setofsets[int]
+W: VAR finite_set[set[int]]
+
+
+N(a)(b): set[int] = {x : int | EXISTS (n:int): x = a + n * b}
+
+open_N_Z?(O): bool = O = emptyset OR 
+  FORALL (a:(O)): EXISTS (b): (subset?(N(a)(b),O))
+
+% @QED union_open_is_open proved by thaynaradelima on Fri, 20 Jan 2023 18:48:41 GMT
+union_open_is_open: LEMMA 
+ FORALL (O,S: (open_N_Z?)): open_N_Z?(union(O,S))
+
+% @QED any_union_open_is_open proved by thaynaradelima on Fri, 27 Jan 2023 18:47:21 GMT
+any_union_open_is_open: LEMMA
+ (FORALL (O:(A)): open_N_Z?(O)) IMPLIES open_N_Z?(Union(A))
+ 
+ % @QED inter_open_is_open proved by marcos-rony on Tue, 31 Jan 2023 23:52:36 GMT
+ inter_open_is_open: LEMMA 
+  FORALL (O,S: (open_N_Z?)):  open_N_Z?(intersection(O,S))
+
+% @QED fin_inter_open_is_open proved by thaynaradelima on Fri, 24 Feb 2023 19:54:25 GMT
+fin_inter_open_is_open: LEMMA
+   (FORALL (O:(W)): open_N_Z?(O)) IMPLIES open_N_Z?(Intersection(W))
+
+% @QED int_is_open proved by marcos-rony on Tue, 28 Feb 2023 03:46:09 GMT
+int_is_open: LEMMA open_N_Z?(fullset[int])
+
+% @QED N_Z_topology proved by marcos-rony on Thu, 16 Mar 2023 23:41:18 GMT
+N_Z_topology: LEMMA topology?(fullset[(open_N_Z?)])
+
+
+% @QED Nab_is_infinite proved by marcos-rony on Wed, 26 Apr 2023 12:22:50 GMT
+Nab_is_infinite: LEMMA is_infinite(N(a)(b))
+
+Ni(a)(b): setofsets[int] =  {Ni: set[int] |  EXISTS (i: subrange(1,b-1)):  Ni= N(a+i)(b)}
+
+% @QED Nab_charac proved by marcos-rony on Thu, 27 Apr 2023 13:49:25 GMT
+Nab_charac: LEMMA
+  N(a)(b) = complement[int](Union(Ni(a)(b)))
+
+IMPORTING topology@topology[int, fullset[(open_N_Z?)]],
+          ints@primes,
+          numbers@prime_factorization
+
+
+% @QED open_is_infinite proved by marcos-rony on Thu, 11 May 2023 13:41:04 GMT
+open_is_infinite: LEMMA 
+  FORALL (A: (open?)): nonempty?[int](A) IMPLIES is_infinite[int](A)
+
+% @QED Nab_open proved by marcos-rony on Mon, 03 Apr 2023 01:38:44 GMT
+Nab_open: LEMMA open?(N(a)(b))
+
+% @QED Nab_closed proved by thaynaradelima on Fri, 24 Mar 2023 20:28:50 GMT
+Nab_closed: LEMMA closed?(N(a)(b))
+
+N_prime: setofsets[int] = {Np: set[int] | EXISTS (p: (prime?)): Np = N(0)(p)}
+
+% @QED one_prime_decomposition proved by thaynaradelima on Sun, 07 May 2023 21:31:40 GMT
+one_prime_decomposition: LEMMA
+abs(x) /=1  IMPLIES EXISTS(p:(prime?)): divides(p,x)
+
+% @QED one_prime_decomposition_ind proved by mauricioayalarincon on Mon, 29 May 2023 00:25:07 GMT
+one_prime_decomposition_ind: LEMMA
+FORALL (n:nat) : n /= 1 IMPLIES EXISTS(p:(prime?)): divides(p,n)
+
+% @QED one_prime_decomposition_int proved by mauricioayalarincon on Mon, 29 May 2023 00:33:48 GMT
+one_prime_decomposition_int: LEMMA
+abs(x) /=1  IMPLIES EXISTS(p:(prime?)): divides(p,x)
+
+% @QED Union_Nprime proved by thaynaradelima on Sun, 07 May 2023 21:34:26 GMT
+Union_Nprime: LEMMA
+  complement[int]({x:int | x = 1 OR x = -1}) = Union(N_prime)
+
+% @QED set_one_mone_is_finite proved by marcos-rony on Wed, 05 May 2023 18:45:34 GMT
+set_one_mone_is_finite: LEMMA
+  is_finite[int]({x:int | x = 1 OR x = -1})
+
+% @QED prime_Nprime_bij proved by thaynaradelima on Thu, 04 May 2023 20:11:00 GMT
+prime_Nprime_bij: LEMMA
+EXISTS (f: [(fullset[(prime?)]) -> (N_prime)]): bijective?(f)
+
+% @QED fin_prime_closed_Np proved by thaynaradelima on Fri, 05 May 2023 00:52:05 GMT
+fin_prime_closed_Np: LEMMA
+is_finite(fullset[(prime?)]) IMPLIES closed?(Union(N_prime))  
+
+% @QED prime_set_is_infinite proved by marcos-rony on Thu, 11 May 2023 13:44:03 GMT
+prime_set_is_infinite : THEOREM
+  is_infinite(fullset[(prime?)])
+
+
+END inf_prime_topology
