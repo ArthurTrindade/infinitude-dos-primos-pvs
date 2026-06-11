@@ -1,0 +1,177 @@
+(inf_prime_topology
+ (union_open_is_open 0
+  (union_open_is_open-1 nil 3990197407
+   ("" (skeep)
+    (("" (typepred "o" "S")
+      (("" (assert)
+        (("" (expand "open_N_Z?")
+          (("" (split)
+            (("1" (split)
+              (("1" (flatten)
+                (("1" (lemma "union_empty[int]")
+                  (("1" (inst -1 o) (("1" (assert) nil nil)) nil))
+                  nil))
+                nil)
+               ("2" (flatten)
+                (("2" (lemma "union_empty[int]")
+                  (("2" (inst -1 "union(o, S)")
+                    (("2" (assert)
+                      (("2" (lemma "union_empty[int]")
+                        (("2" (inst -1 S)
+                          (("2" (assert)
+                            (("2" (lemma "union_commutative[int]")
+                              (("2"
+                                (inst -1 o S)
+                                (("2" (assert) nil nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil)
+             ("2" (split)
+              (("1" (lemma "union_empty[int]")
+                (("1" (flatten)
+                  (("1" (inst -1 "union(o, S)")
+                    (("1" (lemma "union_empty[int]")
+                      (("1" (inst -1 o) (("1" (assert) nil nil)) nil))
+                      nil))
+                    nil))
+                  nil))
+                nil)
+               ("2" (flatten)
+                (("2" (hide 1)
+                  (("2" (skeep)
+                    (("2" (typepred "a")
+                      (("2" (assert)
+                        (("2" (expand "union" -1)
+                          (("2" (split)
+                            (("1" (hide -2)
+                              (("1"
+                                (inst -2 a)
+                                (("1"
+                                  (skeep)
+                                  (("1"
+                                    (inst 1 b)
+                                    (("1"
+                                      (lemma "union_subset1[int]")
+                                      (("1"
+                                        (inst -1 o S)
+                                        (("1"
+                                          (lemma
+                                           "subset_transitive[int]")
+                                          (("1"
+                                            (inst
+                                             -1
+                                             "N(a)(b)"
+                                             o
+                                             "union(o, S)")
+                                            (("1" (assert) nil nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil)
+                                 ("2" (assert) nil nil))
+                                nil))
+                              nil)
+                             ("2" (hide -3)
+                              (("2"
+                                (inst -2 a)
+                                (("1"
+                                  (skeep)
+                                  (("1"
+                                    (inst 1 b)
+                                    (("1"
+                                      (lemma "subset_transitive[int]")
+                                      (("1"
+                                        (lemma "union_subset1[int]")
+                                        (("1"
+                                          (inst -1 S o)
+                                          (("1"
+                                            (lemma
+                                             "union_commutative[int]")
+                                            (("1"
+                                              (inst -1 S o)
+                                              (("1"
+                                                (inst
+                                                 -3
+                                                 "N(a)(b)"
+                                                 S
+                                                 "union(o, S)")
+                                                (("1"
+                                                  (assert)
+                                                  nil
+                                                  nil))
+                                                nil))
+                                              nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil)
+                                 ("2" (assert) nil nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((open_N_Z? const-decl "bool" inf_prime_topology nil)
+    (set type-eq-decl nil sets nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number nonempty-type-decl nil numbers nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (union_subset1 formula-decl nil sets_lemmas nil)
+    (subset_transitive formula-decl nil sets_lemmas nil)
+    (member const-decl "bool" sets nil)
+    (subset_is_partial_order name-judgement "(partial_order?[set[T]])"
+     sets_lemmas nil)
+    (N const-decl "set[int]" inf_prime_topology nil)
+    (posint nonempty-type-eq-decl nil integers nil)
+    (> const-decl "bool" reals nil)
+    (nonneg_int nonempty-type-eq-decl nil integers nil)
+    (>= const-decl "bool" reals nil)
+    (O skolem-const-decl "(open_N_Z?)" inf_prime_topology nil)
+    (S skolem-const-decl "(open_N_Z?)" inf_prime_topology nil)
+    (a skolem-const-decl "(union(o, S))" inf_prime_topology nil)
+    (union_empty formula-decl nil sets_lemmas nil)
+    (finite_emptyset name-judgement "finite_set" finite_sets nil)
+    (union_commutative formula-decl nil sets_lemmas nil)
+    (union const-decl "set" sets nil))
+   shostak))
+ (IMP_topology_TCC1 0
+  (IMP_topology_TCC1-1 nil 3990197398 ("" (subtype-tcc) nil nil) nil
+   nil
+   (IMP_topology subtype
+    "extend[setof[int], (inf_prime_topology.open_N_Z?), booleans.bool, booleans.FALSE].extend(sets[(inf_prime_topology.open_N_Z?)].fullset)"
+    "topology[int]")))
+ (N_prime_TCC1 0
+  (N_prime_TCC1-1 nil 3990197398 ("" (subtype-tcc) nil nil) nil nil
+   (N_prime subtype "inf_prime_topology.p" "posint"))))
+
