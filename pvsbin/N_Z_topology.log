@@ -1,0 +1,35 @@
+inf_prime_topology.N_Z_topology is UNPROVED.
+
+  N_Z_topology depends on the following definitions:
+
+    inf_prime_topology.N
+
+    inf_prime_topology.open_N_Z?
+
+    topology_prelim.topology?
+
+    topology_prelim.topology_Union?
+
+    topology_prelim.topology_empty?
+
+    topology_prelim.topology_full?
+
+    topology_prelim.topology_intersection?
+
+    extend.extend
+
+    reals.>
+
+    reals.>=
+
+    sets.Union
+
+    sets.emptyset
+
+    sets.fullset
+
+    sets.intersection
+
+    sets.member
+
+    sets.subset?
