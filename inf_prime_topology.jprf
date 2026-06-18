@@ -60,6 +60,18 @@
             "rules": [
              {
               "branch": "1.1",
+              "name": "(flatten)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.1",
+              "name": "(lemma \"union_empty[int]\")",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.1",
               "name": "(inst -1 o)",
               "type": "proof-command",
               "rules": []
@@ -80,24 +92,6 @@
              {
               "branch": "1.2",
               "name": "(flatten)",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "1.2",
-              "name": "(lemma \"union_empty[int]\")",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "1.2",
-              "name": "(assert)",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "1.2",
-              "name": "(assert)",
               "type": "proof-command",
               "rules": []
              },
@@ -219,6 +213,12 @@
             "name": "(2.2)",
             "type": "proof-branch",
             "rules": [
+             {
+              "branch": "2.2",
+              "name": "(flatten)",
+              "type": "proof-command",
+              "rules": []
+             },
              {
               "branch": "2.2",
               "name": "(hide 1)",
@@ -799,6 +799,12 @@
             "name": "(4.3)",
             "type": "proof-branch",
             "rules": [
+             {
+              "branch": "4.3",
+              "name": "(typepred A)",
+              "type": "proof-command",
+              "rules": []
+             },
              {
               "branch": "4.3",
               "name": "(expand \"extend\")",

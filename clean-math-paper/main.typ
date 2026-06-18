@@ -8,17 +8,21 @@
 #text-args-title.insert("fill", black)
 #text-args-authors.insert("size", 12pt)
 
+// #set page(fill: )
+// #set text(fill: green.darken(84%))
+#set page(fill: rgb("faf9f0"))
+
+
 #show: template.with(
-  title: "Typst template for mathematical papers",
+  title: "Infinitude dos Primos: Uma Prova Topológica",
   authors: (
     (name: "Arthur Trindade da Silva", affiliation-id: 1),
     (name: "Brian Matheus Rodrigues Ribeiro",  affiliation-id: 1),
+    (name: "Giovanna Silva Cavalcante")
   ),
-  affiliations: (
-    (id: 1, name: "Instituto de Informática"),
-  ),
+ 
   date: date,
-  heading-color: rgb("#0000ff"),
+  heading-color: rgb("#d43893"),
   link-color: rgb("#008002"),
   // Insert your abstract after the colon, wrapped in brackets.
   // Example: `abstract: [This is my abstract...]`
@@ -31,6 +35,7 @@
   // Pass text-args-title to change title text settings
   // text-args-title: text-args-title,
 )
+
 
 = Introduction
 #lorem(20)
