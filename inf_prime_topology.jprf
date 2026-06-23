@@ -28,12 +28,6 @@
      },
      {
       "branch": "",
-      "name": "(assert)",
-      "type": "proof-command",
-      "rules": []
-     },
-     {
-      "branch": "",
       "name": "(expand \"open_N_Z?\")",
       "type": "proof-command",
       "rules": []
@@ -103,24 +97,6 @@
              },
              {
               "branch": "1.2",
-              "name": "(inst -1 \"union(o, S)\")",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "1.2",
-              "name": "(assert)",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "1.2",
-              "name": "(lemma \"union_empty[int]\")",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "1.2",
               "name": "(inst -1 S)",
               "type": "proof-command",
               "rules": []
@@ -139,13 +115,55 @@
              },
              {
               "branch": "1.2",
-              "name": "(inst -1 o S)",
+              "name": "(inst -1 S \"emptyset\")",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.2",
+              "name": "(replace -4 -1 rl)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.2",
+              "name": "(replace -4 -2 rl)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.2",
+              "name": "(replace -2 -1 lr)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.2",
+              "name": "(replace -1 -3 lr)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.2",
+              "name": "(skeep)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.2",
+              "name": "(typepred a)",
               "type": "proof-command",
               "rules": []
              },
              {
               "branch": "1.2",
               "name": "(assert)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "1.2",
+              "name": "(inst -4 a)",
               "type": "proof-command",
               "rules": []
              }
@@ -162,6 +180,12 @@
         "rules": [
          {
           "branch": "2",
+          "name": "(flatten)",
+          "type": "proof-command",
+          "rules": []
+         },
+         {
+          "branch": "2",
           "name": "(split)",
           "type": "proof-command",
           "rules": [
@@ -172,19 +196,13 @@
             "rules": [
              {
               "branch": "2.1",
-              "name": "(lemma \"union_empty[int]\")",
+              "name": "(skeep)",
               "type": "proof-command",
               "rules": []
              },
              {
               "branch": "2.1",
-              "name": "(flatten)",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "2.1",
-              "name": "(inst -1 \"union(o, S)\")",
+              "name": "(typepred a)",
               "type": "proof-command",
               "rules": []
              },
@@ -202,7 +220,31 @@
              },
              {
               "branch": "2.1",
-              "name": "(assert)",
+              "name": "(replace -3 -1 rl)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "2.1",
+              "name": "(replace -1 -2 lr)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "2.1",
+              "name": "(inst -4 a)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "2.1",
+              "name": "(replace -1 -4 rl)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "2.1",
+              "name": "(propax)",
               "type": "proof-command",
               "rules": []
              }
@@ -215,31 +257,13 @@
             "rules": [
              {
               "branch": "2.2",
-              "name": "(flatten)",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "2.2",
-              "name": "(hide 1)",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "2.2",
               "name": "(skeep)",
               "type": "proof-command",
               "rules": []
              },
              {
               "branch": "2.2",
-              "name": "(typepred \"a\")",
-              "type": "proof-command",
-              "rules": []
-             },
-             {
-              "branch": "2.2",
-              "name": "(assert)",
+              "name": "(typepred a)",
               "type": "proof-command",
               "rules": []
              },
@@ -283,18 +307,6 @@
                      },
                      {
                       "branch": "2.2.1.1",
-                      "name": "(inst 1 b)",
-                      "type": "proof-command",
-                      "rules": []
-                     },
-                     {
-                      "branch": "2.2.1.1",
-                      "name": "(lemma \"union_subset1[int]\")",
-                      "type": "proof-command",
-                      "rules": []
-                     },
-                     {
-                      "branch": "2.2.1.1",
                       "name": "(inst -1 o S)",
                       "type": "proof-command",
                       "rules": []
@@ -314,6 +326,12 @@
                      {
                       "branch": "2.2.1.1",
                       "name": "(assert)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.1.1",
+                      "name": "(inst 2 b)",
                       "type": "proof-command",
                       "rules": []
                      }
@@ -359,19 +377,13 @@
                     "rules": [
                      {
                       "branch": "2.2.2.1",
+                      "name": "(hide 1)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
                       "name": "(skeep)",
-                      "type": "proof-command",
-                      "rules": []
-                     },
-                     {
-                      "branch": "2.2.2.1",
-                      "name": "(inst 1 b)",
-                      "type": "proof-command",
-                      "rules": []
-                     },
-                     {
-                      "branch": "2.2.2.1",
-                      "name": "(lemma \"subset_transitive[int]\")",
                       "type": "proof-command",
                       "rules": []
                      },
@@ -389,6 +401,24 @@
                      },
                      {
                       "branch": "2.2.2.1",
+                      "name": "(lemma \"subset_transitive[int]\")",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
+                      "name": "(inst -1 \"N(a)(b)\" S \"union(S, o)\")",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
+                      "name": "(assert)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
                       "name": "(lemma \"union_commutative[int]\")",
                       "type": "proof-command",
                       "rules": []
@@ -401,13 +431,13 @@
                      },
                      {
                       "branch": "2.2.2.1",
-                      "name": "(inst -3 \"N(a)(b)\" S \"union(o, S)\")",
+                      "name": "(replace -1 -2 lr)",
                       "type": "proof-command",
                       "rules": []
                      },
                      {
                       "branch": "2.2.2.1",
-                      "name": "(assert)",
+                      "name": "(inst 1 b)",
                       "type": "proof-command",
                       "rules": []
                      }
