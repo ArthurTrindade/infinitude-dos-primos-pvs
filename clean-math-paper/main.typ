@@ -84,7 +84,10 @@ $bold("A coleção") tau bold("induzida pelos conjuntos abertos do tipo") O, bol
 3. Se $O_1$ e $0_2$ pertencem a $tau$, então $O_1 inter O_2$ pertence a $tau$.
 
 #proof[
-  Seja $O_1 e O_2 in tau$,
+  Seja $A subset.eq tau$, com $A$ finito e $|A| = n$. Podemos provar por indução na interseção.
+
+  _Base:_ 
+  Seja $O_1 "e" O_2 in tau$,
   - Se $O_1 = emptyset$ e $O_2 = emptyset$, temos $O_1 inter O_2 = emptyset in tau$
 
   - Se $O_1 = emptyset "e" O_2 != emptyset$, sem perda de generalidade. Temos que, $O_1 inter O_2 = emptyset in tau$.
@@ -93,6 +96,56 @@ $bold("A coleção") tau bold("induzida pelos conjuntos abertos do tipo") O, bol
     - $O_1 in tau, forall a in O_1, space exists b_1 "t.q." N_(a, b_1) subset.eq O_1$
     - $O_2 in tau, space forall a in O_2, exists b_2 "t.q." N_(a, b_2) subset.eq O_2$
     Tome $b = b_1b_2$. Logo, $Nab subset.eq O_1 "e" Nab subset.eq O_2$. Portanto, $Nab subset.eq (O_1 inter O_2)$.
+
+  _H.I.:_ $inter.big_(i = 1)^(n-1) O_i in tau$ 
+
+  _P.I.:_ 
+  Queremos mostrar que $inter.big_(i = 1)^(n) in tau$
+  $ inter.big_(i = 1)^n O_i = (inter.big_(i = i)^(n-1) O_i) inter O_n $
+
+  Pela _H.I._ $inter.big_(i = 1)^(n-1) O_i in tau$
+
+  - Se $(inter.big_(i = 1)^(n-1) O_i) inter O_n = emptyset in tau$
+
+  - Se $(inter.big_(i = 1)^(n-1) O_i) inter O_n != emptyset$, então $exists a in (inter.big_(i = 1)^(n - 1) O_i) inter O_n$. Logo, $exists b_i, b_n$, tais que $N_(a, b_i) subset.eq (inter.big_(i = 0)^(n - 1))$ e $N_(a, b_n) subset.eq O_n$, Portanto, $N_(a, b_i dot b_n) subset.eq (inter.big_(i = 0)^(n-1) O_i) inter O_n$.
+]
+
+#proposition[
+  Todo conjunto aberto não vazio é infinito.
+  #proof[
+    Se $O = emptyset$, então $Nab subset O$, para algum $a in O$ e $b > 0$.
+  ]
+]
+
+#proposition[
+  Para quaisquer $a in bb(Z)$ e $b > 0$, $Nab$ é conjunto aberto.
+]
+
+#definition(title: "Conjuntos Fechados")[
+  Um subconjunto $A$ de um espaço topológico $X$ é chamada conjunto fechade se, e somente se, se complemento $A^c$ é um conjunto aberto em $X$.
+]
+
+#proposition[
+  Para quaisquer $a in bb(Z) "e" b > 0, Nab "é fechado"$.
+]
+
+#proposition[
+  Considere $k$ um número inteiro tal $k != 1$ e $k != -1$. Portanto, $k$ tem um divisor primo $p$ e. consequentemente, $k in N_(0, p)$.
+  Além disso, 
+
+  $ bb(Z) \\ {-1 , 1} = union.big_(p in bb(P)) N_(0, p), "em que" bb(P) "denota o conjuntos do números primos." $
+]
+
+#proof[
+  Demonstração da infinitude dos primos.
+
+  Se $bb(P)$ é finito, então:
+
+  - $union_(p in bb(P)) N_(0, p)$ é um conjunto fechado
+  - Assim, ${-1 ,1}$ é um conjunto aberto
+  - Consequentemente, ${-1, 1}$ é aberto infinito.
+
+ *Portanto, o conjunto $bb(P)$ dos números primos é infinito.* 
 
 ]
 
