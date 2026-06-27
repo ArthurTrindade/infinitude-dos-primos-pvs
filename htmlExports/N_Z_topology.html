@@ -1,0 +1,713 @@
+
+<!--
+@formula: N_Z_topology
+@theory: inf_prime_topology
+@pvsfile: inf_prime_topology.pvs
+@note: Use the Web Browser to view this file.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N_Z_topology</title>
+    <style type="text/css">
+.node {
+    cursor: pointer;
+    fill: white;
+    stroke: darkgray;
+}
+.node .checkmark {
+    stroke: transparent;
+}
+.node .star {
+    stroke: transparent;
+    fill: transparent;
+}
+.node:hover {
+    cursor: pointer;
+    stroke: steelblue;
+}
+.node.visited {
+    fill: transparent;
+    stroke: transparent;
+}
+.node.visited .star {
+    fill: steelblue;
+    stroke: steelblue;
+}
+.node.complete {
+    fill: #7ac142;
+    stroke: darkgray;
+}
+.node.complete .checkmark {
+    stroke: white;
+}
+.node.complete .star {
+    fill: transparent;
+    stroke: transparent;
+}
+.node.pending {
+    fill: transparent;
+    stroke: transparent;
+}
+.node.pending .star {
+    fill: white;
+    stroke: steelblue;
+}
+.node text {
+    font: 10px sans-serif;
+    fill: darkslateblue;
+    stroke: transparent;
+}
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+</style>
+</head>
+<body style="margin-left:20px; margin-top:60px; padding:0; overflow:auto; background:whitesmoke;">
+
+        <svg id="proof-tree" style="width:4096px; height:633.6px;">
+            <g class="links">
+                <g class="link 79ade146bcdb7b2aca51de48850bfb191e00d666cd3c6ebee053dc19b0e109d4 162f557538796e01e621aed62416b6824e7122f2e2c6e3855106131219f2105e">
+                    <line x1="800" y1="32" x2="800" y2="64"></line>
+                </g>
+                <g class="link 162f557538796e01e621aed62416b6824e7122f2e2c6e3855106131219f2105e 978e3c3d3f713a3929076125ce91eecf1c7b52ba5bfecc8fad4371e88fee0c8f">
+                    <line x1="800" y1="64" x2="800" y2="96"></line>
+                </g>
+                <g class="link 978e3c3d3f713a3929076125ce91eecf1c7b52ba5bfecc8fad4371e88fee0c8f 802122105933f76e79f3e7260272c541e968c836d1401d6c56cae2313b06e995">
+                    <line x1="800" y1="96" x2="128" y2="128"></line>
+                </g>
+                <g class="link 978e3c3d3f713a3929076125ce91eecf1c7b52ba5bfecc8fad4371e88fee0c8f 61631aaf6e2b4cee19741e8ab00c5aa9d15575289624f4b47993ed94db56a1e5">
+                    <line x1="800" y1="96" x2="384" y2="128"></line>
+                </g>
+                <g class="link 978e3c3d3f713a3929076125ce91eecf1c7b52ba5bfecc8fad4371e88fee0c8f 061d019daf52494a6e1a4612140aaf60dddfd9a1a50b466c99171dea951a31b1">
+                    <line x1="800" y1="96" x2="768" y2="128"></line>
+                </g>
+                <g class="link 978e3c3d3f713a3929076125ce91eecf1c7b52ba5bfecc8fad4371e88fee0c8f ca3cc8416e6d2ae9e85b40d6c7dd8a7fc2a421126aba0c9a574612210c2ff282">
+                    <line x1="800" y1="96" x2="1472" y2="128"></line>
+                </g>
+                <g class="link 802122105933f76e79f3e7260272c541e968c836d1401d6c56cae2313b06e995 4616218cda79a8ffba24f2651b38d6e5a3cab1dbdb96bbccc2f949e38e8a2aab">
+                    <line x1="128" y1="128" x2="128" y2="160"></line>
+                </g>
+                <g class="link 61631aaf6e2b4cee19741e8ab00c5aa9d15575289624f4b47993ed94db56a1e5 c56d871ef6861cacd4977d7b53b9a3f22c6eb2b1a53daf9026e288e5287f3bad">
+                    <line x1="384" y1="128" x2="384" y2="160"></line>
+                </g>
+                <g class="link 061d019daf52494a6e1a4612140aaf60dddfd9a1a50b466c99171dea951a31b1 9b72a3fbad73a79aea9991a28e1ede563ba7a5f3f183ccb628dbaefc9560645a">
+                    <line x1="768" y1="128" x2="768" y2="160"></line>
+                </g>
+                <g class="link ca3cc8416e6d2ae9e85b40d6c7dd8a7fc2a421126aba0c9a574612210c2ff282 98411832fe3fa4d96afa5053c263b1324d5b12516e63d5a11ac30702b28133c5">
+                    <line x1="1472" y1="128" x2="1472" y2="160"></line>
+                </g>
+                <g class="link 4616218cda79a8ffba24f2651b38d6e5a3cab1dbdb96bbccc2f949e38e8a2aab d7cfd9009a2b5aede9403ec407cb1bac7bbff382f61c02770f8b11695de417b6">
+                    <line x1="128" y1="160" x2="128" y2="192"></line>
+                </g>
+                <g class="link c56d871ef6861cacd4977d7b53b9a3f22c6eb2b1a53daf9026e288e5287f3bad c4a17aeffb0617a95287a3e0686b98500a8061e13eccd6af37c1399199105545">
+                    <line x1="384" y1="160" x2="384" y2="192"></line>
+                </g>
+                <g class="link 9b72a3fbad73a79aea9991a28e1ede563ba7a5f3f183ccb628dbaefc9560645a 553d0b554aa5476ef8ed7c1312a24788b12dd1738b143e32e91069678775ad8a">
+                    <line x1="768" y1="160" x2="768" y2="192"></line>
+                </g>
+                <g class="link 98411832fe3fa4d96afa5053c263b1324d5b12516e63d5a11ac30702b28133c5 ce33735c60a0d4b54e13c2c09b86f57826ba0176963a5323cd13bf9c0450127d">
+                    <line x1="1472" y1="160" x2="1472" y2="192"></line>
+                </g>
+                <g class="link d7cfd9009a2b5aede9403ec407cb1bac7bbff382f61c02770f8b11695de417b6 39263d63056796e00505e8c604f22e7ad22309fe62d102d594c919c0436f7601">
+                    <line x1="128" y1="192" x2="128" y2="224"></line>
+                </g>
+                <g class="link c4a17aeffb0617a95287a3e0686b98500a8061e13eccd6af37c1399199105545 296b168f4483fc81a968a3ddc773a89d2a64c5529181cfd8199907034454381a">
+                    <line x1="384" y1="192" x2="384" y2="224"></line>
+                </g>
+                <g class="link 553d0b554aa5476ef8ed7c1312a24788b12dd1738b143e32e91069678775ad8a a7ea8e7724d4b06cd54e0157cd49db0fee091824b5741c5d56c8294759cc0953">
+                    <line x1="768" y1="192" x2="768" y2="224"></line>
+                </g>
+                <g class="link ce33735c60a0d4b54e13c2c09b86f57826ba0176963a5323cd13bf9c0450127d 85f41a0fdf2b821bc63f2b8d29350a1afb7dca9a0e818af0f08bc76605d9d547">
+                    <line x1="1472" y1="192" x2="1472" y2="224"></line>
+                </g>
+                <g class="link 39263d63056796e00505e8c604f22e7ad22309fe62d102d594c919c0436f7601 5e331decb76f4410890d6d39240f39f117c60397d615b0cb01cd056333464331">
+                    <line x1="128" y1="224" x2="128" y2="256"></line>
+                </g>
+                <g class="link 296b168f4483fc81a968a3ddc773a89d2a64c5529181cfd8199907034454381a 7083e2d33d2fd0998009fe971b24d769227126b32c76ec23f96bb5348ee92686">
+                    <line x1="384" y1="224" x2="384" y2="256"></line>
+                </g>
+                <g class="link a7ea8e7724d4b06cd54e0157cd49db0fee091824b5741c5d56c8294759cc0953 62b3caa93d8b97e9af0dd9bc4f537dd6d322b55a7d27ad13c92703c21bb5d61e">
+                    <line x1="768" y1="224" x2="768" y2="256"></line>
+                </g>
+                <g class="link 85f41a0fdf2b821bc63f2b8d29350a1afb7dca9a0e818af0f08bc76605d9d547 ba7b63e0a5c0c12a54aee5af7889e4cfe52402be9cb9c3b8ef977f8e3962bb74">
+                    <line x1="1472" y1="224" x2="1472" y2="256"></line>
+                </g>
+                <g class="link 5e331decb76f4410890d6d39240f39f117c60397d615b0cb01cd056333464331 98b06bf5d582b0d6fcfcd3de3045dbffb908efa488d0cd03b11c3a40432f5924">
+                    <line x1="128" y1="256" x2="128" y2="288"></line>
+                </g>
+                <g class="link 7083e2d33d2fd0998009fe971b24d769227126b32c76ec23f96bb5348ee92686 827cb3cd5ee275e8225b73aa09c2af24ecd1698ffb9c42661ba6ace4f50ed670">
+                    <line x1="384" y1="256" x2="384" y2="288"></line>
+                </g>
+                <g class="link 62b3caa93d8b97e9af0dd9bc4f537dd6d322b55a7d27ad13c92703c21bb5d61e ce2ea0d2c368ba5146f503c3e8735f07c8647e05379212208354f4dd2c447983">
+                    <line x1="768" y1="256" x2="768" y2="288"></line>
+                </g>
+                <g class="link ba7b63e0a5c0c12a54aee5af7889e4cfe52402be9cb9c3b8ef977f8e3962bb74 b1a164d511e7b5627457acb05fbe524a448133405f44b636bd6d6081be76479b">
+                    <line x1="1472" y1="256" x2="1472" y2="288"></line>
+                </g>
+                <g class="link 98b06bf5d582b0d6fcfcd3de3045dbffb908efa488d0cd03b11c3a40432f5924 44fac93560bb7035b189582b4965b1141926bf56eff126db1d2657fc58a2a4cf">
+                    <line x1="128" y1="288" x2="128" y2="320"></line>
+                </g>
+                <g class="link 827cb3cd5ee275e8225b73aa09c2af24ecd1698ffb9c42661ba6ace4f50ed670 a2a760c9b7017c776c6efc7c8dc9259766636238e593ea1355172ab7d2db5654">
+                    <line x1="384" y1="288" x2="384" y2="320"></line>
+                </g>
+                <g class="link ce2ea0d2c368ba5146f503c3e8735f07c8647e05379212208354f4dd2c447983 38461badb7f17b5faafd6f6f1450b20a8e1c41f06aac92ea0f745cba1b1807a4">
+                    <line x1="768" y1="288" x2="640" y2="320"></line>
+                </g>
+                <g class="link ce2ea0d2c368ba5146f503c3e8735f07c8647e05379212208354f4dd2c447983 6a306180201e6bb4941f10f49a9aea95e73f84ff9580c4f9a633fb6da7b2e3b8">
+                    <line x1="768" y1="288" x2="896" y2="320"></line>
+                </g>
+                <g class="link b1a164d511e7b5627457acb05fbe524a448133405f44b636bd6d6081be76479b 2841abef50782d59365c929b88a58cec0170fa1ceff646d3845cf6ee51ad6120">
+                    <line x1="1472" y1="288" x2="1472" y2="320"></line>
+                </g>
+                <g class="link a2a760c9b7017c776c6efc7c8dc9259766636238e593ea1355172ab7d2db5654 fdaf33ddf1df315cb463672ed0409300815b705e4d0093533f2a1eff33021107">
+                    <line x1="384" y1="320" x2="384" y2="352"></line>
+                </g>
+                <g class="link 38461badb7f17b5faafd6f6f1450b20a8e1c41f06aac92ea0f745cba1b1807a4 36e5bcf0caffeb6a3ebee4fd48bb7c3bc35f27034389ac7280e61eda6f18234a">
+                    <line x1="640" y1="320" x2="640" y2="352"></line>
+                </g>
+                <g class="link 6a306180201e6bb4941f10f49a9aea95e73f84ff9580c4f9a633fb6da7b2e3b8 e0a9a4fbba1beb23b1c3419b6ba4914bc376a5b6dd03157f754d839401aed230">
+                    <line x1="896" y1="320" x2="896" y2="352"></line>
+                </g>
+                <g class="link 2841abef50782d59365c929b88a58cec0170fa1ceff646d3845cf6ee51ad6120 b6a995fdb71ceef47a1e3b467daff29b030ba97c90d149a6db1f7b1b52857fd1">
+                    <line x1="1472" y1="320" x2="1152" y2="352"></line>
+                </g>
+                <g class="link 2841abef50782d59365c929b88a58cec0170fa1ceff646d3845cf6ee51ad6120 be282b372039d01e5468423c7e2384a47f00fda89a1f6e886d9c28e4381161f7">
+                    <line x1="1472" y1="320" x2="1408" y2="352"></line>
+                </g>
+                <g class="link 2841abef50782d59365c929b88a58cec0170fa1ceff646d3845cf6ee51ad6120 afd46df55b04070a20fbf9d8afa40d7afce1c6a8798cca86ef1715e777592c61">
+                    <line x1="1472" y1="320" x2="1792" y2="352"></line>
+                </g>
+                <g class="link fdaf33ddf1df315cb463672ed0409300815b705e4d0093533f2a1eff33021107 e3cbbf4f6c626de541cd62c1e933796d02a4d77437ab12fc58e70bc50eb81d7e">
+                    <line x1="384" y1="352" x2="384" y2="384"></line>
+                </g>
+                <g class="link 36e5bcf0caffeb6a3ebee4fd48bb7c3bc35f27034389ac7280e61eda6f18234a 4549bd35a204353e65c66b10cd9ffb21efa4c7000fc71804e5e530966af861d6">
+                    <line x1="640" y1="352" x2="640" y2="384"></line>
+                </g>
+                <g class="link e0a9a4fbba1beb23b1c3419b6ba4914bc376a5b6dd03157f754d839401aed230 39229349573b84630c1edf69fa201af84fa381c302cb0373c86215bb2ca98d2b">
+                    <line x1="896" y1="352" x2="896" y2="384"></line>
+                </g>
+                <g class="link b6a995fdb71ceef47a1e3b467daff29b030ba97c90d149a6db1f7b1b52857fd1 be286d0585c5e92408475c36912ba64d4d6ed132dda980410102011a95453842">
+                    <line x1="1152" y1="352" x2="1152" y2="384"></line>
+                </g>
+                <g class="link be282b372039d01e5468423c7e2384a47f00fda89a1f6e886d9c28e4381161f7 d8aeac387cd97664bd3498a6dbfbed3ad27e32c7eeb67d07bbaf3dbe8c80036a">
+                    <line x1="1408" y1="352" x2="1408" y2="384"></line>
+                </g>
+                <g class="link afd46df55b04070a20fbf9d8afa40d7afce1c6a8798cca86ef1715e777592c61 24df22f8880388b1f1a3ca2e74704f20b5c8f3721ddbe16fdec81a0c290d4429">
+                    <line x1="1792" y1="352" x2="1792" y2="384"></line>
+                </g>
+                <g class="link 4549bd35a204353e65c66b10cd9ffb21efa4c7000fc71804e5e530966af861d6 b2055605756e0524f82cbb2d1f66187a6cd481f74f7a257d3bbc970ff7d95601">
+                    <line x1="640" y1="384" x2="640" y2="416"></line>
+                </g>
+                <g class="link 39229349573b84630c1edf69fa201af84fa381c302cb0373c86215bb2ca98d2b a4cf8f2f11216852760b5b451fdc6b783c24dfe2bfe034a22430bac8b7f9b67f">
+                    <line x1="896" y1="384" x2="896" y2="416"></line>
+                </g>
+                <g class="link be286d0585c5e92408475c36912ba64d4d6ed132dda980410102011a95453842 3f2df553969810769fc1d34b52d828a74699110566920d9a6f82e843963ce535">
+                    <line x1="1152" y1="384" x2="1152" y2="416"></line>
+                </g>
+                <g class="link d8aeac387cd97664bd3498a6dbfbed3ad27e32c7eeb67d07bbaf3dbe8c80036a 31ca5902677f08a95353efc554b530a469f7552cb25d7a762199ce0057278da6">
+                    <line x1="1408" y1="384" x2="1408" y2="416"></line>
+                </g>
+                <g class="link 24df22f8880388b1f1a3ca2e74704f20b5c8f3721ddbe16fdec81a0c290d4429 7e992be93af76ab338b72ab51d6e74a68849fe446271b8db2071a5c8cccfb803">
+                    <line x1="1792" y1="384" x2="1792" y2="416"></line>
+                </g>
+                <g class="link b2055605756e0524f82cbb2d1f66187a6cd481f74f7a257d3bbc970ff7d95601 55d64ddd522c876eb58f435032e53c60b2fcfa977b567d05e5f89ebc25729e39">
+                    <line x1="640" y1="416" x2="640" y2="448"></line>
+                </g>
+                <g class="link a4cf8f2f11216852760b5b451fdc6b783c24dfe2bfe034a22430bac8b7f9b67f ed3e49fbab221ee722803f1229540e4ef460a5d42b068139e329b251697ed448">
+                    <line x1="896" y1="416" x2="896" y2="448"></line>
+                </g>
+                <g class="link 3f2df553969810769fc1d34b52d828a74699110566920d9a6f82e843963ce535 18142abaf7140b40432748de7e4a5a66c1d9d6e89a11aad8fde45b809c6f0c46">
+                    <line x1="1152" y1="416" x2="1152" y2="448"></line>
+                </g>
+                <g class="link 31ca5902677f08a95353efc554b530a469f7552cb25d7a762199ce0057278da6 7388628198069b4c4edb2830382a7430bda3ecd5d3538a7ae8017b90263b5997">
+                    <line x1="1408" y1="416" x2="1408" y2="448"></line>
+                </g>
+                <g class="link 7e992be93af76ab338b72ab51d6e74a68849fe446271b8db2071a5c8cccfb803 1809907c32dfb1399aa756905c1bbf4c78cb2ad568baaf74231433edf82e3c05">
+                    <line x1="1792" y1="416" x2="1792" y2="448"></line>
+                </g>
+                <g class="link 55d64ddd522c876eb58f435032e53c60b2fcfa977b567d05e5f89ebc25729e39 17ea9652c48b843173b919c1d902b8edf2b979ef47731559412f506735a27b4a">
+                    <line x1="640" y1="448" x2="640" y2="480"></line>
+                </g>
+                <g class="link ed3e49fbab221ee722803f1229540e4ef460a5d42b068139e329b251697ed448 cb5f39b0e585e8643f3a4f8a372a9dc177f72e128b346d571981fcc5fe3c76f8">
+                    <line x1="896" y1="448" x2="896" y2="480"></line>
+                </g>
+                <g class="link 7388628198069b4c4edb2830382a7430bda3ecd5d3538a7ae8017b90263b5997 bae52eecc4c5b799f7abf3bbd57ca2265701bb0f94aa9fb2f3a1e9578f69e888">
+                    <line x1="1408" y1="448" x2="1408" y2="480"></line>
+                </g>
+                <g class="link 1809907c32dfb1399aa756905c1bbf4c78cb2ad568baaf74231433edf82e3c05 fd382aaba5dfe1cf997a71e2c5264db51a2629cce54802d66f9f8ebed9e3a8d3">
+                    <line x1="1792" y1="448" x2="1664" y2="480"></line>
+                </g>
+                <g class="link 1809907c32dfb1399aa756905c1bbf4c78cb2ad568baaf74231433edf82e3c05 60304e11d1db43eb6507d74e62a0b7db11b4797c6ed224ee5ce5123cde30c903">
+                    <line x1="1792" y1="448" x2="1920" y2="480"></line>
+                </g>
+                <g class="link cb5f39b0e585e8643f3a4f8a372a9dc177f72e128b346d571981fcc5fe3c76f8 fd515ca65c2ead6ad1ced6ddcfbf2bee194338826ddd634cc31e271ff21f3fee">
+                    <line x1="896" y1="480" x2="896" y2="512"></line>
+                </g>
+                <g class="link fd382aaba5dfe1cf997a71e2c5264db51a2629cce54802d66f9f8ebed9e3a8d3 40f0e403e240ec5dfce8235307d7a1aaea5607e2676cbb1c29c734779896b72c">
+                    <line x1="1664" y1="480" x2="1664" y2="512"></line>
+                </g>
+                <g class="link 60304e11d1db43eb6507d74e62a0b7db11b4797c6ed224ee5ce5123cde30c903 70997c6bc0ec5f79ce2c87879da05453ba791f8fbc3dda4748a8bb770b7443cb">
+                    <line x1="1920" y1="480" x2="1920" y2="512"></line>
+                </g>
+                <g class="link fd515ca65c2ead6ad1ced6ddcfbf2bee194338826ddd634cc31e271ff21f3fee 7f2b209ead67a532cf7207ee8f87e7482526fced2dcab12109da660709e1231b">
+                    <line x1="896" y1="512" x2="896" y2="544"></line>
+                </g>
+                <g class="link 7f2b209ead67a532cf7207ee8f87e7482526fced2dcab12109da660709e1231b 2d7d005612edaf2121a2756247724f74fa8cd06317b8bfcd6fde2aab889309d9">
+                    <line x1="896" y1="544" x2="896" y2="576"></line>
+                </g>
+            </g>
+            <g class="nodes">
+                <g id="79ade146bcdb7b2aca51de48850bfb191e00d666cd3c6ebee053dc19b0e109d4" class="node visited" transform="translate(800,32)">
+                    <circle class="root-node" r="2"></circle>
+                    <text dy="-0.5em" text-anchor="middle" style="font:12px sans-serif;">Proof: N_Z_topology</text>
+                </g>
+                <g id="162f557538796e01e621aed62416b6824e7122f2e2c6e3855106131219f2105e" class="node active" transform="translate(800,64)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "topology?")</text>
+                </g>
+                <g id="978e3c3d3f713a3929076125ce91eecf1c7b52ba5bfecc8fad4371e88fee0c8f" class="node" transform="translate(800,96)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(split)</text>
+                </g>
+                <g id="802122105933f76e79f3e7260272c541e968c836d1401d6c56cae2313b06e995" class="node" transform="translate(128,128)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(1)</text>
+                </g>
+                <g id="61631aaf6e2b4cee19741e8ab00c5aa9d15575289624f4b47993ed94db56a1e5" class="node" transform="translate(384,128)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(2)</text>
+                </g>
+                <g id="061d019daf52494a6e1a4612140aaf60dddfd9a1a50b466c99171dea951a31b1" class="node" transform="translate(768,128)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(3)</text>
+                </g>
+                <g id="ca3cc8416e6d2ae9e85b40d6c7dd8a7fc2a421126aba0c9a574612210c2ff282" class="node" transform="translate(1472,128)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(4)</text>
+                </g>
+                <g id="4616218cda79a8ffba24f2651b38d6e5a3cab1dbdb96bbccc2f949e38e8a2aab" class="node" transform="translate(128,160)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "topology_empty?")</text>
+                </g>
+                <g id="c56d871ef6861cacd4977d7b53b9a3f22c6eb2b1a53daf9026e288e5287f3bad" class="node" transform="translate(384,160)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "topology_full?")</text>
+                </g>
+                <g id="9b72a3fbad73a79aea9991a28e1ede563ba7a5f3f183ccb628dbaefc9560645a" class="node" transform="translate(768,160)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "topology_Union?")</text>
+                </g>
+                <g id="98411832fe3fa4d96afa5053c263b1324d5b12516e63d5a11ac30702b28133c5" class="node" transform="translate(1472,160)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "topology_intersection?")</text>
+                </g>
+                <g id="d7cfd9009a2b5aede9403ec407cb1bac7bbff382f61c02770f8b11695de417b6" class="node" transform="translate(128,192)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "member")</text>
+                </g>
+                <g id="c4a17aeffb0617a95287a3e0686b98500a8061e13eccd6af37c1399199105545" class="node" transform="translate(384,192)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "member")</text>
+                </g>
+                <g id="553d0b554aa5476ef8ed7c1312a24788b12dd1738b143e32e91069678775ad8a" class="node" transform="translate(768,192)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(lemma any_union_open_is_open)</text>
+                </g>
+                <g id="ce33735c60a0d4b54e13c2c09b86f57826ba0176963a5323cd13bf9c0450127d" class="node" transform="translate(1472,192)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(skeep)</text>
+                </g>
+                <g id="39263d63056796e00505e8c604f22e7ad22309fe62d102d594c919c0436f7601" class="node" transform="translate(128,224)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "extend")</text>
+                </g>
+                <g id="296b168f4483fc81a968a3ddc773a89d2a64c5529181cfd8199907034454381a" class="node" transform="translate(384,224)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "extend")</text>
+                </g>
+                <g id="a7ea8e7724d4b06cd54e0157cd49db0fee091824b5741c5d56c8294759cc0953" class="node" transform="translate(768,224)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(skeep)</text>
+                </g>
+                <g id="85f41a0fdf2b821bc63f2b8d29350a1afb7dca9a0e818af0f08bc76605d9d547" class="node" transform="translate(1472,224)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "member")</text>
+                </g>
+                <g id="5e331decb76f4410890d6d39240f39f117c60397d615b0cb01cd056333464331" class="node" transform="translate(128,256)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "open_N_Z?")</text>
+                </g>
+                <g id="7083e2d33d2fd0998009fe971b24d769227126b32c76ec23f96bb5348ee92686" class="node" transform="translate(384,256)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "open_N_Z?")</text>
+                </g>
+                <g id="62b3caa93d8b97e9af0dd9bc4f537dd6d322b55a7d27ad13c92703c21bb5d61e" class="node" transform="translate(768,256)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(inst -1 U)</text>
+                </g>
+                <g id="ba7b63e0a5c0c12a54aee5af7889e4cfe52402be9cb9c3b8ef977f8e3962bb74" class="node" transform="translate(1472,256)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "extend")</text>
+                </g>
+                <g id="98b06bf5d582b0d6fcfcd3de3045dbffb908efa488d0cd03b11c3a40432f5924" class="node" transform="translate(128,288)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "fullset")</text>
+                </g>
+                <g id="827cb3cd5ee275e8225b73aa09c2af24ecd1698ffb9c42661ba6ace4f50ed670" class="node" transform="translate(384,288)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "fullset")</text>
+                </g>
+                <g id="ce2ea0d2c368ba5146f503c3e8735f07c8647e05379212208354f4dd2c447983" class="node" transform="translate(768,288)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(split)</text>
+                </g>
+                <g id="b1a164d511e7b5627457acb05fbe524a448133405f44b636bd6d6081be76479b" class="node" transform="translate(1472,288)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(lemma inter_open_is_open)</text>
+                </g>
+                <g id="44fac93560bb7035b189582b4965b1141926bf56eff126db1d2657fc58a2a4cf" class="node" transform="translate(128,320)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(propax)</text>
+                </g>
+                <g id="a2a760c9b7017c776c6efc7c8dc9259766636238e593ea1355172ab7d2db5654" class="node" transform="translate(384,320)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "subset?")</text>
+                </g>
+                <g id="38461badb7f17b5faafd6f6f1450b20a8e1c41f06aac92ea0f745cba1b1807a4" class="node" transform="translate(640,320)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(3.1)</text>
+                </g>
+                <g id="6a306180201e6bb4941f10f49a9aea95e73f84ff9580c4f9a633fb6da7b2e3b8" class="node" transform="translate(896,320)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(3.2)</text>
+                </g>
+                <g id="2841abef50782d59365c929b88a58cec0170fa1ceff646d3845cf6ee51ad6120" class="node" transform="translate(1472,320)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(inst -1 A B)</text>
+                </g>
+                <g id="fdaf33ddf1df315cb463672ed0409300815b705e4d0093533f2a1eff33021107" class="node" transform="translate(384,352)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "member")</text>
+                </g>
+                <g id="36e5bcf0caffeb6a3ebee4fd48bb7c3bc35f27034389ac7280e61eda6f18234a" class="node" transform="translate(640,352)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "member")</text>
+                </g>
+                <g id="e0a9a4fbba1beb23b1c3419b6ba4914bc376a5b6dd03157f754d839401aed230" class="node" transform="translate(896,352)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(skeep)</text>
+                </g>
+                <g id="b6a995fdb71ceef47a1e3b467daff29b030ba97c90d149a6db1f7b1b52857fd1" class="node" transform="translate(1152,352)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(4.1)</text>
+                </g>
+                <g id="be282b372039d01e5468423c7e2384a47f00fda89a1f6e886d9c28e4381161f7" class="node" transform="translate(1408,352)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(4.2)</text>
+                </g>
+                <g id="afd46df55b04070a20fbf9d8afa40d7afce1c6a8798cca86ef1715e777592c61" class="node" transform="translate(1792,352)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(4.3)</text>
+                </g>
+                <g id="e3cbbf4f6c626de541cd62c1e933796d02a4d77437ab12fc58e70bc50eb81d7e" class="node" transform="translate(384,384)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(propax)</text>
+                </g>
+                <g id="4549bd35a204353e65c66b10cd9ffb21efa4c7000fc71804e5e530966af861d6" class="node" transform="translate(640,384)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand extend 1)</text>
+                </g>
+                <g id="39229349573b84630c1edf69fa201af84fa381c302cb0373c86215bb2ca98d2b" class="node" transform="translate(896,384)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(typepred o)</text>
+                </g>
+                <g id="be286d0585c5e92408475c36912ba64d4d6ed132dda980410102011a95453842" class="node" transform="translate(1152,384)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(assert)</text>
+                </g>
+                <g id="d8aeac387cd97664bd3498a6dbfbed3ad27e32c7eeb67d07bbaf3dbe8c80036a" class="node" transform="translate(1408,384)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(assert)</text>
+                </g>
+                <g id="24df22f8880388b1f1a3ca2e74704f20b5c8f3721ddbe16fdec81a0c290d4429" class="node" transform="translate(1792,384)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(typepred A)</text>
+                </g>
+                <g id="b2055605756e0524f82cbb2d1f66187a6cd481f74f7a257d3bbc970ff7d95601" class="node" transform="translate(640,416)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(assert)</text>
+                </g>
+                <g id="a4cf8f2f11216852760b5b451fdc6b783c24dfe2bfe034a22430bac8b7f9b67f" class="node" transform="translate(896,416)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(assert)</text>
+                </g>
+                <g id="3f2df553969810769fc1d34b52d828a74699110566920d9a6f82e843963ce535" class="node" transform="translate(1152,416)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "fullset")</text>
+                </g>
+                <g id="31ca5902677f08a95353efc554b530a469f7552cb25d7a762199ce0057278da6" class="node" transform="translate(1408,416)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(typepred B)</text>
+                </g>
+                <g id="7e992be93af76ab338b72ab51d6e74a68849fe446271b8db2071a5c8cccfb803" class="node" transform="translate(1792,416)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "extend")</text>
+                </g>
+                <g id="55d64ddd522c876eb58f435032e53c60b2fcfa977b567d05e5f89ebc25729e39" class="node" transform="translate(640,448)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "fullset")</text>
+                </g>
+                <g id="ed3e49fbab221ee722803f1229540e4ef460a5d42b068139e329b251697ed448" class="node" transform="translate(896,448)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "subset?")</text>
+                </g>
+                <g id="18142abaf7140b40432748de7e4a5a66c1d9d6e89a11aad8fde45b809c6f0c46" class="node" transform="translate(1152,448)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(propax)</text>
+                </g>
+                <g id="7388628198069b4c4edb2830382a7430bda3ecd5d3538a7ae8017b90263b5997" class="node" transform="translate(1408,448)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand "extend")</text>
+                </g>
+                <g id="1809907c32dfb1399aa756905c1bbf4c78cb2ad568baaf74231433edf82e3c05" class="node" transform="translate(1792,448)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(split)</text>
+                </g>
+                <g id="17ea9652c48b843173b919c1d902b8edf2b979ef47731559412f506735a27b4a" class="node" transform="translate(640,480)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(propax)</text>
+                </g>
+                <g id="cb5f39b0e585e8643f3a4f8a372a9dc177f72e128b346d571981fcc5fe3c76f8" class="node" transform="translate(896,480)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(inst -2 o)</text>
+                </g>
+                <g id="bae52eecc4c5b799f7abf3bbd57ca2265701bb0f94aa9fb2f3a1e9578f69e888" class="node" transform="translate(1408,480)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(propax)</text>
+                </g>
+                <g id="fd382aaba5dfe1cf997a71e2c5264db51a2629cce54802d66f9f8ebed9e3a8d3" class="node" transform="translate(1664,480)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(4.3.1)</text>
+                </g>
+                <g id="60304e11d1db43eb6507d74e62a0b7db11b4797c6ed224ee5ce5123cde30c903" class="node" transform="translate(1920,480)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(4.3.2)</text>
+                </g>
+                <g id="fd515ca65c2ead6ad1ced6ddcfbf2bee194338826ddd634cc31e271ff21f3fee" class="node" transform="translate(896,512)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(assert)</text>
+                </g>
+                <g id="40f0e403e240ec5dfce8235307d7a1aaea5607e2676cbb1c29c734779896b72c" class="node" transform="translate(1664,512)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(flatten)</text>
+                </g>
+                <g id="70997c6bc0ec5f79ce2c87879da05453ba791f8fbc3dda4748a8bb770b7443cb" class="node" transform="translate(1920,512)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(propax)</text>
+                </g>
+                <g id="7f2b209ead67a532cf7207ee8f87e7482526fced2dcab12109da660709e1231b" class="node" transform="translate(896,544)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(expand extend -2)</text>
+                </g>
+                <g id="2d7d005612edaf2121a2756247724f74fa8cd06317b8bfcd6fde2aab889309d9" class="node" transform="translate(896,576)">
+                    <circle r="6"></circle>
+                    <path class="checkmark" fill="none" d="M-3 0l2 3 6-6"></path>
+                    <path class="star" d="M0 -6l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246"></path>
+                    <!-- <rect y="-1.1em" x="-0.4em" width="0.8em" height="0.6em" style="fill:whitesmoke; fill-opacity:0.6; stroke:transparent;"></rect> -->
+                    <text class="name" dy="0.25em" dx="1em" text-anchor="start" style="font:12px sans-serif;">(propax)</text>
+                </g>
+            </g>
+        </svg>
+    
+</body>

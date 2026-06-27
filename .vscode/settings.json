@@ -14,15 +14,15 @@
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true,
-        "**/*.???~": true,
         "**/.pvscontext": true,
-        "**/pvsbin": true,
-        "**/*.jprf": true,
-        "**/*.prf": true,
-        "**/orphaned-proofs.prf": true,
+        "**/.vscode": true,
         "**/*_adt.pvs": false,
+        "**/*.???~": true,
+        "**/*.jprf": true,
         "**/*.log": false,
-        "**/.vscode": true
+        "**/orphaned-proofs.prf": true,
+        "**/pvsbin": true,
+        "**/*.prf": true
     },
     "files.readonlyInclude": {
         "**/*.tccs": true,

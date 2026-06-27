@@ -39,6 +39,7 @@
 
 = Introdução
 // #lorem(20)
+A demonstração da infinitude dos números primos é um dos resultados mais clássicos da teoria dos números. Tradicionalmente abordada por métodos puramente aritméticos, este trabalho explora uma prova alternativa proposta por Hillel Furstenberg, que utiliza conceitos de topologia geral. A estratégia consiste em equipar o conjunto dos números inteiros (Z) com uma estrutura topológica baseada em progressões aritméticas. Ao definir conjuntos abertos e fechados dentro desta métrica, prova-se por contradição que, se o conjunto dos primos fosse finito, um conjunto finito específico ({−1,1}) teria propriedades de um conjunto aberto infinito, o que gera uma impossibilidade lógica dentro do sistema definido.
 
 = Metodologia
 

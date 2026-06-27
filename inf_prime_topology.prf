@@ -160,11 +160,7 @@
     (union const-decl "set" sets nil)
     (emptyset const-decl "set" sets nil)
     (finite_emptyset name-judgement "finite_set" finite_sets nil)
-    (union_empty formula-decl nil sets_lemmas nil)
-    (O skolem-const-decl "(open_N_Z?)" inf_prime_topology nil)
-    (S skolem-const-decl "(open_N_Z?)" inf_prime_topology nil)
-    (a skolem-const-decl "(union(o, S))" inf_prime_topology nil)
-    (a skolem-const-decl "(union(o, S))" inf_prime_topology nil)
+    (union_empty formula-decl nil sets_lemmas nil) nil nil nil nil
     (subset_transitive formula-decl nil sets_lemmas nil)
     (subset_is_partial_order name-judgement "(partial_order?[set[T]])"
      sets_lemmas nil)
@@ -295,9 +291,9 @@
      sets_lemmas nil)
     (Union_surjective name-judgement
      "(surjective?[setofsets[T], set[T]])" sets_lemmas nil)
-    (topology_Union? const-decl "bool" topology_prelim topology) nil
+    (topology_Union? const-decl "bool" topology_prelim topology)
     (FALSE const-decl "bool" booleans nil)
-    (set type-eq-decl nil sets nil) nil
+    (set type-eq-decl nil sets nil)
     (inter_open_is_open formula-decl nil inf_prime_topology nil)
     (topology_intersection? const-decl "bool" topology_prelim topology)
     (topology? const-decl "bool" topology_prelim topology))
@@ -310,5 +306,110 @@
     "topology[int]")))
  (N_prime_TCC1 0
   (N_prime_TCC1-1 nil 3990197398 ("" (subtype-tcc) nil nil) nil nil
-   (N_prime subtype "inf_prime_topology.p" "posint"))))
+   (N_prime subtype "inf_prime_topology.p" "posint")))
+ (prime_set_is_infinite 0
+  (prime_set_is_infinite-1 nil 3991400073
+   ("" (lemma "fin_prime_closed_Np")
+    (("" (assert)
+      (("" (lemma "set_one_mone_is_finite")
+        (("" (expand "closed?")
+          (("" (expand "member")
+            (("" (expand "extend")
+              (("" (lemma "Union_Nprime")
+                (("" (split)
+                  (("1" (flatten)
+                    (("1" (replace -3 -1 rl)
+                      (("1" (lemma "complement_complement[int]")
+                        (("1" (inst -1 "{x: int | x = 1 OR x = -1}")
+                          (("1" (assert)
+                            (("1" (replace -1 -2 lr)
+                              (("1"
+                                (hide -1)
+                                (("1"
+                                  (lemma "open_is_infinite")
+                                  (("1"
+                                    (inst
+                                     -1
+                                     "{x: int | x = 1 OR x = -1}")
+                                    (("1"
+                                      (split)
+                                      (("1" (propax) nil nil)
+                                       ("2"
+                                        (expand "nonempty?")
+                                        (("2"
+                                          (expand "empty?")
+                                          (("2"
+                                            (inst -1 "1")
+                                            (("2"
+                                              (expand "member")
+                                              (("2" (propax) nil nil))
+                                              nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil)
+                                     ("2"
+                                      (expand "open?")
+                                      (("2"
+                                        (expand "member")
+                                        (("2"
+                                          (expand "extend")
+                                          (("2" (propax) nil nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil)
+                   ("2" (propax) nil nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((closed? const-decl "bool" topology topology)
+    (extend const-decl "R" extend nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (set type-eq-decl nil sets nil)
+    (OR const-decl "[bool, bool -> bool]" booleans nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (open_is_infinite formula-decl nil inf_prime_topology nil)
+    (empty? const-decl "bool" sets nil)
+    (nonempty? const-decl "bool" sets nil)
+    (open_N_Z? const-decl "bool" inf_prime_topology nil)
+    (setof type-eq-decl nil defined_types nil)
+    (FALSE const-decl "bool" booleans nil)
+    (fullset const-decl "set" sets nil)
+    (open? const-decl "bool" topology topology)
+    (Union_surjective name-judgement
+     "(surjective?[setofsets[T], set[T]])" sets_lemmas nil)
+    (complement_complement formula-decl nil sets_lemmas nil)
+    (number nonempty-type-decl nil numbers nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (Union_Nprime formula-decl nil inf_prime_topology nil)
+    (member const-decl "bool" sets nil)
+    (set_one_mone_is_finite formula-decl nil inf_prime_topology nil)
+    (fin_prime_closed_Np formula-decl nil inf_prime_topology nil))
+   shostak)))
 
