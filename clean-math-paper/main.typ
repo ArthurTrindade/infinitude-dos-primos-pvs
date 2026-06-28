@@ -55,7 +55,7 @@ que satisfaz as seguintes propriedades:
 - Um conjunto $X$ equipado com uma topologia $tau$ é chamado de *espaço topológico*.
 - Um subconjunto $U$ de um espaço topológico $X$, que pertence à coleção $tau$, é chamado de *conjunto aberto de* de $X$ $("open_N_Z?")$.
 
-]
+] <deftopo>
 
 == Argumento Topológico de Furstenberg
 
@@ -63,7 +63,7 @@ que satisfaz as seguintes propriedades:
     Considere os conjuntos $X = bb(Z)$ e $N_(a, b) = {a + n dot b | n in bb(Z)}
     a, b in bb(Z)$, em que $b > 0$. Um conjunto $O subset.eq bb(Z)$ é chamado aberto
     se, e somente se, $O = emptyset$ ou, para todo $a in O$, existe um inteiro $b > 0$ tal que $N_(a, b) subset.eq O$.
-]
+] <defopen>
 
 $bold("A coleção") tau bold("induzida pelos conjuntos abertos do tipo") O, bold("é uma topologia sobre") bb(Z)$:
 
@@ -147,7 +147,7 @@ $bold("A coleção") tau bold("induzida pelos conjuntos abertos do tipo") O, bol
   Além disso, 
 
   $ bb(Z) \\ {-1 , 1} = union.big_(p in bb(P)) N_(0, p), "em que" bb(P) "denota o conjuntos do números primos." $
-]
+] <defUP>
 
 #proof[
   Demonstração da infinitude dos primos.
@@ -163,6 +163,21 @@ $bold("A coleção") tau bold("induzida pelos conjuntos abertos do tipo") O, bol
 ]
 
 = Descrição da formalização
+
+Nossa formalização consistia na prova de 3 teoremas, sendo eles:
+
+1. $"union_open_is_open: LEMMA FORALL (O,S: (open_N_Z?)): open_N_Z?(union(O,S))"$.
+
+- Consiste em mostrar que a união de dois conjuntos abertos é aberta.
+
+2. $" N_Z_topology: LEMMA topology?(fullset[(open_N_Z?)])"$
+
+- Consiste em mostrar que o conjunto formado pelos conjuntos que são $"open_N_Z"$ dados pela definição do @defopen especificada no _pvs_.
+
+3. $"prime_set_is_infinite : THEOREM is_infinite(fullset[(prime?)])"$
+
+- Consiste em mostrar que o conjuntos dos primos é infinito.
+
 Foi usada a formalização fornecida pela professora com várias definições e lemas, além de um teorema ao final $("prime_set_is_infinite")$ que prova a infinitude do conjunto dos números primos.
 
 Durante a verificação dos lemas, foram aplicadas as seguintes regras:
@@ -172,7 +187,18 @@ Durante a verificação dos lemas, foram aplicadas as seguintes regras:
 - *inst*: Para fornecer termos específicos a quantificadores existenciais, como a escolha da razão b na interseção.
 - *lemma*: Para aplicar lemas provados na nossa formalização ou disponível na biblioteca do PVS. Corresponde à regra do corte no Cálculo de Sequentes a la Gentzen.
 
-  A principal diferença notada entre a prova em papel e lápis, e a formalização foi a necessidade de explicitar lemas como o de transitividade de subconjuntos $("subset_transitive")$ e substituições $("replace")$, que são omitidos por serem triviais no papel, mas essenciais para o rigor mecânico do PVS.
+  A principal diferença notada entre a prova em papel e lápis, e a formalização foi a necessidade de explicitar lemas como o de transitividade de subconjuntos $("subset_transitive")$ e substituições $("replace")$, que são omitidos por serem triviais no papel, mas necessárias para PVS.
+
+== Provas no PVS
+
+A árvore de provas dos teoremas pode ser encontrada em:
+#link("https://arthurtrindade.github.io/")
+
+1. A prova foi realizada verificando cada possibilidade para os conjuntos $o "e" S$, sendo vazio ou não vazio. E com isso, chamamos alguns lemas, sendo eles: $"union_empty", "union_commutative", "union_subset1" "e" "subset_transitive"$.
+
+2. A prova foi divida em 4 subprovas, sendo elas: $"topology_empty?, topology_full, topology_Union e topology_intersection"$ oriundas da definição de topologia @deftopo. Nas duas primeiras apenas precisamos expandir a definição. A terceira prova requer o lema $"any_union_open_is_open"$ e expandir as definições. A última prova necessita do lema $"inter_open_is_open"$, e então expandir as definições.
+
+3. Para a prova da infinitude dos primos, mostraremos que os primos não são finitos. Pela equivalência no cálculo à la Gentzen, o sequente que temos no _pvs_ é: $"{-1}   is_finite(fullset[(prime?)])"$, ou seja que os primos são finito nas premissas. Com isso, podemos usar os lemas, $"fin_prime_is_closed_Np"$, onde teriamos que a união dada por @defUP é um conjuntos fechado. $"set_one_mone_is_finite"$, temos que o conjuntos ${-1, 1}$ é finito e a definição no _pvs_ de @defUP $"Union_Nprime"$. Ápos isso, precisamos apenas dos lemas $"complement_complement e open_is_infinite"$.
 
 = Conclusão
 O teorema final $("prime_set_is_infinite")$ encerra a formalização demonstrando que a
